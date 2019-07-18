@@ -1,0 +1,11 @@
+@mixin position-center {
+  margin: 0 auto;
+}
+
+@mixin link-hover {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,258 @@
+.section {
+  background-color: #F6F6F6;
+  padding-bottom: 123px;
+  color: $text-color-dark;
+
+  @media screen and (max-width: $tablet-max-size) {
+    padding-bottom: $medium;
+  }
+
+  &__header {
+    padding-top: 123px;
+    padding-left: 1.6px; //pixel perfect
+    display: flex;
+
+    @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+      flex-direction: column;
+      padding-top: $xlarge;
+    }
+
+    @media screen and (max-width: $iPhone) {
+      flex-direction: column-reverse;
+      padding-top: 0;
+      padding-left: 0;
+    }
+
+    &-text {
+      font-size: $font-xlarge;
+      color: $text-color-dark;
+
+      @media screen and (max-width: $iPhone) {
+        display: none;
+      }
+    }
+
+    &-search {
+      padding-left: 234px;
+      margin-top: 2px; //pixel perfect
+
+      @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+        padding-left: 0;
+        margin-top: $medium;
+      }
+
+      @media screen and (max-width: $iPhone) {
+        margin-top: 0;
+        padding: $xsmall $small $xsmall;
+        border-bottom: 1px solid $text-color-grey;
+        border-top: 1px solid $text-color-grey;
+        background-color: white;
+      }
+
+      &-logo {
+        position: absolute;
+        display: block;
+        text-align: center;
+        margin-left: 11px;
+        margin-top: 10px;
+
+        &-img {
+          width: 18px;
+        }
+      }
+
+      &-input {
+        font-size: 15px;
+        padding: 8px 184px 8px 34px;
+        border: 1px solid $text-color-grey;
+        border-radius: 4px;
+        margin-top: 1px;
+
+        @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+          padding: 8px 168px 8px 34px;
+          max-width: 100px;
+        }
+
+        @media screen and (max-width: $iPhone) {
+          padding-right: 82px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+
+    @media screen and (max-width: $tablet-max-size) {
+      flex-wrap: wrap;
+    }
+
+    &__article:not(:last-child) {
+      margin-right: $small;
+
+      @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+        margin: 0 auto 36px auto;
+      }
+
+      @media screen and (max-width: $iPhone) {
+        margin-right:  $small;
+      }
+    }
+
+    @media screen and (max-width: $iPhone) {
+      &__article:last-child {
+        margin-right:  $small;
+      }
+    }
+
+    &__article {
+      background-color: $color-white;
+      max-width: 317px;
+      margin-top: $xxlarge;
+      padding: $medium;
+      height: 415px;
+      position: relative;
+
+      @media screen and (max-width: $iPhone) {
+        margin: $xsmall auto 0 $small;
+        padding: $small;
+        height: auto;
+        width: 100%;
+      }
+
+      @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+        max-width: 727px;
+        height: auto;
+        @include position-center;
+      }
+
+      &__topHeader {
+        display: flex;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $iPhone) {
+          margin-bottom: $small;
+        }
+
+        &-img {
+          height: 80px;
+        }
+
+        &-text {
+          font-size: $font-large;
+          margin-left: 15px;
+          line-height: 31px;
+
+          @media screen and (max-width: $iPhone) {
+            font-size: $font-large;
+          }
+        }
+      }
+
+      &__subscription {
+        font-size: $font-medium;
+        margin-bottom: 20px;
+        @media screen and (max-width: $iPhone) {
+          font-size: $font-small;
+          margin-bottom: $large;
+        }
+      }
+
+      &__text {
+        font-size: $font-medium;
+        line-height: 23px;
+        margin-bottom: $small;
+
+        @media screen and (max-width: $iPhone) {
+          display: none;
+        }
+      }
+
+      &__format {
+        margin-bottom: $small;
+
+        @media screen and (max-width: $iPhone) {
+          display: none;
+        }
+      }
+
+      &__type {
+        border: 1px solid $color-lightblue;
+        padding: 3px 7px 3px 7px;
+        border-radius: 4px;
+        color: $color-lightblue;
+      }
+
+      &__bottomHeader {
+        position: absolute;
+        bottom: 0;
+        width: 268px;
+
+        @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+          position: unset;
+          width: auto;
+        }
+
+        @media screen and (max-width: $iPhone) {
+          right: 0;
+          font-size: $font-medium;
+          margin-right: $small;
+          margin-bottom: $xsmall;
+        }
+
+        &-text {
+          font-size: $font-xlarge;
+          text-align: end;
+
+          @media screen and (max-width: $iPhone) {
+            font-size: $font-large;
+          }
+        }
+
+        &-subscription {
+          text-align: end;
+          font-size: $font-xsmall;
+
+          @media screen and (max-width: $iPhone) {
+            display: none;
+          }
+        }
+
+        &-button {
+          font-size: $font-medium;
+          padding: 8px 74px 8px 74px;
+          margin-bottom: 27px;
+          background-color: $color-orange;
+          border-radius: 5px;
+          margin-top: 15px;
+          color: $color-white;
+          @include link-hover;
+
+          @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+            display: flex;
+            margin: $medium auto 0;
+            font-size: $font-small;
+          }
+
+          @media screen and (max-width: $iPhone) {
+            display: none;
+          }
+        }
+      }
+
+      &-bold {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-position {
+    max-width: 984px;
+    @include position-center;
+
+    @media screen and (min-width: $tablet-min-size) and (max-width: $tablet-max-size) {
+      max-width: 727px;
+      padding: $xlarge $xlarge 0 $xlarge;
+    }
+  }
+}
